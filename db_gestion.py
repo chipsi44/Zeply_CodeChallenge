@@ -46,7 +46,7 @@ def select_all(table_name) :
 
     return coin_address_row
 
-def select_specifiedId(table_name,id) : 
+def select_specified_id(table_name,id) : 
     connection = connect_to_db()
     cursor = connection.cursor()
     postgreSQL_select_Query = "SELECT * FROM " + table_name + " WHERE id='" + id +"';"

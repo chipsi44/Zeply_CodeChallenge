@@ -2,7 +2,7 @@ from eth_account import Account
 from COIN_AddGen.seed_generator import create_seed
 import hashlib
 
-def create_privateKey() : 
+def create_private_key() : 
     #create the seed
     seed = create_seed()
     #create the private key with the seed
@@ -18,7 +18,7 @@ def ETH_address_generator(private_key) :
         return(None,private_key,acct.address[2:])
     else : 
         #create the private key
-        seed,private_key = create_privateKey()
+        seed,private_key = create_private_key()
         #create address with the private key
         acct = Account.from_key(private_key)
         #return the seed, the private key and the public address

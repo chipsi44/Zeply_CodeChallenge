@@ -1,4 +1,4 @@
-from db_gestion import add_to_db, select_all, select_specifiedId
+from db_gestion import add_to_db, select_all, select_specified_id
 from COIN_AddGen.BTC_AddGen import bitcoin_address_generator
 from COIN_AddGen.ETH_AddGen import ETH_address_generator
 
@@ -36,6 +36,6 @@ def list_address() :
     return all_record
 
 def retrieve_address(id) :
-    my_address = select_specifiedId("address_coin",id)
+    my_address = select_specified_id("address_coin",id)
     return my_address[0]
 
