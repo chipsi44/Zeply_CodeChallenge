@@ -1,32 +1,39 @@
-from db_gestion import add_to_db
-from COIN_AddGen.BTC_AddGen import bitcoin_address_generator
-from COIN_AddGen.ETH_AddGen import ETH_address_generator
+import unittest
+from endpoints import retrieve_address, list_address
+class TestStringMethods(unittest.TestCase):
 
-def generate_address(coin,private_key = False) :
-    '''
-    Want to add another coin? No problem!
-    Add your coin to the dictionary and link it to your function.
+    def test_retrieve_address(self):
+        '''
+        In this case, the test is based on the rows with id 7 and 11 in the database.
+        However, if those id are not present, you can change them to other valid id. 
+        Additionally, there are only two currencies in the test, so if you add more currencies, you should also update the `coin_list`.
+        '''
+        a = '7'
+        b = '11'
+        #Let's verify that we can get our three elements (ID,Coin,Address)
+        self.assertEqual(len(retrieve_address(a)), 3)
+        self.assertEqual(len(retrieve_address(b)), 3)
+        print('Three elements test passed')
+        #in this test we ensure that we get the id we asked for !
+        self.assertEqual(str(retrieve_address(a)[0]), a)
+        self.assertEqual(str(retrieve_address(b)[0]), b)
+        print("Id test passed")
+        #Let's verify that the coin is in our coin list ! 
+        coin_list = ["BTC","ETH"]
+        self.assertTrue(retrieve_address(a)[1] in coin_list )
+        self.assertTrue(retrieve_address(b)[1] in coin_list )
+        print("coin test passed")
 
-    Your function should be created in a file named COIN_addGen.py (replace COIN with your coin) in the directory COIN_AddGen. 
-    It should return the seed, the private key (hex without "Ox"), and the public address.
+    def test_list_address(self):
+        self.assertEqual('FOO','FOO')
+        
 
-    If no seed is provided in your library, you can use our seed generator to create a private key with the new seed generated.
-    If you provide the private key, then the seed is not needed. (Can be return as None)
-    '''
+    def test_split(self):
+        s = 'hello world'
+        self.assertEqual(s.split(), ['hello', 'world'])
+        # check that s.split fails when the separator is not a string
+        with self.assertRaises(TypeError):
+            s.split(2)
 
-    dic_coin_function = {
-        'BTC' : lambda x : bitcoin_address_generator(x),
-        'ETH' : lambda x : ETH_address_generator(x)
-    }
-
-    #use the function in the dictionary with the chosen coin
-    seed,private_key,public_address = dic_coin_function[coin](private_key)
-
-    #You can modify this part to output them on your website for example
-    print(f"Private key, KEEP THIS FOR YOU : {private_key}")
-    print(f"SEED, KEEP THIS FOR YOU : {seed}")
-    print(f'Public address : {public_address}')
-
-    #add the data to the db
-    add_to_db(coin,public_address)
-
+if __name__ == '__main__':
+    unittest.main()

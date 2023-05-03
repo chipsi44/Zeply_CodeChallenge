@@ -1,5 +1,10 @@
 import psycopg2
 
+'''
+Note: This could have been transformed into OOP, but since we only use one database, I don't see the importance of doing it. 
+If we were using multiple databases, the use of OOP could have been a great idea.
+'''
+
 def connect_to_db() :
     #Connection to my data base, I created a PostgreSQL one hosted on render.com but of course this can be changed. 
     passconn = psycopg2.connect(
@@ -28,3 +33,28 @@ def add_to_db(coin,public_key) :
     cursor.close()
     passconn.close()
 
+def select_all(table_name) : 
+    connection = connect_to_db()
+    cursor = connection.cursor()
+    postgreSQL_select_Query = "SELECT * FROM " + table_name
+
+    cursor.execute(postgreSQL_select_Query)
+
+    coin_address_row = cursor.fetchall()
+    cursor.close()
+    connection.close()
+
+    return coin_address_row
+
+def select_specifiedId(table_name,id) : 
+    connection = connect_to_db()
+    cursor = connection.cursor()
+    postgreSQL_select_Query = "SELECT * FROM " + table_name + " WHERE id='" + id +"';"
+
+    cursor.execute(postgreSQL_select_Query)
+
+    coin_address_row = cursor.fetchall()
+    cursor.close()
+    connection.close()
+
+    return coin_address_row
