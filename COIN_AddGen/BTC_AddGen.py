@@ -1,7 +1,6 @@
 from bitcoinaddress import Wallet
 
-def bitcoin_adress_generator() :
-    private_key = '5KAVmfYtCvGcvv2PaKkKvpm16nMZbrrSzYVzuiPTi7fx5dVgyvc'
+def bitcoin_address_generator(private_key) :
     if private_key : 
         wallet = Wallet(private_key)
     else : 
@@ -10,7 +9,6 @@ def bitcoin_adress_generator() :
     return(wallet.key.__dict__['seed'].__str__(),
            wallet.address.__dict__['key'].__str__(),
            wallet.address.__dict__['mainnet'].__dict__['pubaddr1'])
-print(bitcoin_adress_generator())
 
 
 '''
