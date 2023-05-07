@@ -96,7 +96,7 @@ It is important to note that testing is a specialized field that requires expert
 To run the unit tests, simply execute the main.py file. The tests will be executed automatically, and the output will be displayed on the console. If any test fails, an error message will be displayed indicating which test has failed and what the expected output was.
 
 # deployement Branch : 
-As this project is meant to showcase my skills, I created a simple webpage and connected it to a Flask app to demonstrate how it could be used in a real-world project. I also developed a Dockerfile that is stored on Docker Hub. For more information, please refer to the Deployment branch
+As this project is meant to showcase my skills, I created a simple webpage and connected it to a Flask app to demonstrate how it could be used in a real-world project. I also developed a Dockerfile that is stored on Docker Hub. It's important to note that the deployment aspect was not mandatory for the project and, as such, the deployment files are located on a separate branch from the main one. For more information, please refer to the Deployment branch.
 
 # Last note : 
 Please note that this project was created as part of a company challenge, and the comments present in the code were added for the benefit of the recruiter.
