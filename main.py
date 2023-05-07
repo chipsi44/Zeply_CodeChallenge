@@ -73,5 +73,6 @@ class TestStringMethods(unittest.TestCase):
         id1 = list_all_elements[-1][0]
         id2 = list_all_elements[-2][0]
         self.assertEqual(retrieve_address(id1)[1:], retrieve_address(id2)[1:])
+
 if __name__ == '__main__':
     unittest.main()

@@ -25,7 +25,7 @@ def generate_address(coin,private_key = False) :
     #use the function in the dictionary with the chosen coin
     seed,private_key,public_address = dic_coin_function[coin](private_key)
 
-    #
+    
     #Just a bit of help for the dev the intersting part is the return ! 
     print(f"Private key, KEEP THIS FOR YOU : {private_key}")
     print(f"SEED, KEEP THIS FOR YOU : {seed}")
@@ -35,6 +35,7 @@ def generate_address(coin,private_key = False) :
     add_to_db(coin,public_address)
 
     return (seed,private_key,public_address)
+
 def list_address() :
     all_record = select_all('address_coin')
     return all_record
