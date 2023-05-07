@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Address Generator</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f1f1f1;
+		}
+		h1 {
+			text-align: center;
+			color: #333;
+			margin-top: 50px;
+		}
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 50px;
+			background-color: #fff;
+			padding: 30px;
+			border-radius: 10px;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+			max-width: 500px;
+			margin: auto;
+		}
+		input[type="text"] {
+			padding: 10px;
+			margin: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			width: 100%;
+			box-sizing: border-box;
+			font-size: 16px;
+		}
+		button[type="submit"] {
+			background-color: #4CAF50;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			margin: 10px;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+		button[type="submit"]:hover {
+			background-color: #3e8e41;
+		}
+		p {
+			margin-top: 50px;
+			text-align: center;
+			font-size: 18px;
+			font-weight: bold;
+			color: #333;
+		}
+	</style>
+</head>
+<body>
+	<h1>Address Generator Form</h1>
+	<form action="/" method="POST">
+		<label for="coin">Coin:</label>
+		<input type="text" id="coin" name="coin">
+		<label for="privateKey">Private Key:</label>
+		<input type="text" id="privateKey" name="privateKey">
+		<button type="submit" name="action" value="generateAddress">Generate Address</button>
+		<label for="addressId">Address ID:</label>
+		<input type="text" id="addressId" name="addressId">
+		<button type="submit" name="action" value="retrieveAddress">Retrieve Address</button>
+		<button type="submit" name="action" value="getAllAddresses">All Addresses</button>
+	</form>
+    {% if info %}
+      <p>(id, coin, public address): {{ info }}</p>
+    {% endif %}
+    {% if info_generate %}
+      <p>(Private key, seed, public address): {{ info_generate }}</p>
+    {% endif %}
+</body>
+</html>
