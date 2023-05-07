@@ -31,7 +31,7 @@ The webapp can be launched on your localhost, giving you access to three endpoin
 2. **retrieve_address** : By providing an ID, the application can retrieve the data of the corresponding row in the database and display it for you (id,coin,public address).
 3. **list_address** : Display a list of all the addresses created so far, the application will display the ID, coin type, and public address for each entry in the database.
 # Some visual
-| ![the web page]([image1.png](https://media.discordapp.net/attachments/291266083833380865/1104821469353095238/image.png?width=911&height=676) "WebPage") | ![web page with id retrieve](https://cdn.discordapp.com/attachments/291266083833380865/1104821365061726299/image.png "WebPage with id retrieve") |
+| ![the web page](https://media.discordapp.net/attachments/291266083833380865/1104821469353095238/image.png?width=911&height=676) | ![web page with id retrieve](https://cdn.discordapp.com/attachments/291266083833380865/1104821365061726299/image.png "WebPage with id retrieve") |
 # The database
 
 The database used for this project is hosted on a free online service called render.com. It is a PostgreSQL database that contains a single table with columns for ID, coin, and public address.
