@@ -49,12 +49,17 @@ def select_all(table_name) :
 def select_specified_id(table_name,id) : 
     connection = connect_to_db()
     cursor = connection.cursor()
-    postgreSQL_select_Query = "SELECT * FROM " + table_name + " WHERE id='" + id +"';"
-
+    #Error handling
+    cursor.execute("SELECT id FROM " + table_name)
+    id_values = [row[0] for row in cursor.fetchall()]
+    if int(id) not in id_values:
+        raise ValueError("id not in db")
+    #Select the asked id
+    postgreSQL_select_Query = "SELECT * FROM " + table_name + " WHERE id='" + str(id) +"';"
+    #Execute the queries
     cursor.execute(postgreSQL_select_Query)
-
     coin_address_row = cursor.fetchall()
+    #close everything and return the result
     cursor.close()
     connection.close()
-
     return coin_address_row
