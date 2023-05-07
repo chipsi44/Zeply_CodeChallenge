@@ -34,10 +34,10 @@ The webapp can be launched on your localhost, giving you access to three endpoin
 
 <div style="display: flex;" justify-content: center;>
   <div style="flex: 1;">
-    <img src="https://github.com/chipsi44/Zeply_CodeChallenge/blob/deployement_test/image/webpage.png" alt="Image webpage">
+    <img src="https://github.com/chipsi44/Zeply_CodeChallenge/blob/deployement_test/image/webpage.png" alt="Image webpage" style="width: 45%;">
   </div>
   <div style="flex: 1;">
-    <img src="https://github.com/chipsi44/Zeply_CodeChallenge/blob/deployement_test/image/webpagewithretrieveid.png" alt="WebPage with id">
+    <img src="https://github.com/chipsi44/Zeply_CodeChallenge/blob/deployement_test/image/webpagewithretrieveid.png" alt="WebPage with id" style="width: 45%";>
   </div>
 </div>
 
