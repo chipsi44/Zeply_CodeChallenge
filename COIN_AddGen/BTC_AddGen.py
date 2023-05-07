@@ -17,5 +17,3 @@ def bitcoin_address_generator(private_key) :
     return(wallet.key.__dict__['seed'].__str__(),
            return_private_key,
            wallet.address.__dict__['mainnet'].__dict__['pubaddr1'])
-
-
