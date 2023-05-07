@@ -15,14 +15,9 @@ def verify_address(url,number_of_address) :
     else:
         driver.close()
         return False
-
+    
 class TestStringMethods(unittest.TestCase):
-    '''
-        Since this project is meant to be completed in three days, I won't be able to thoroughly test every aspect of it. 
-        While I am aware that additional tests could be written to cover areas such as error handling and memory limitations, 
-        it's important to keep in mind that testing is a whole job in itself.
-        Therefore, for the purposes of this project, I focused on writing tests that cover the most critical functionality.
-    '''
+
     def test_retrieve_address(self):
         '''
         In this case, the test is based on the rows with id 7 and 11 in the database.
@@ -52,10 +47,11 @@ class TestStringMethods(unittest.TestCase):
         '''
         self.assertTrue(verify_address('https://www.blockchain.com/fr/explorer/search?search='+retrieve_address(b)[2],'2'))
 
-    '''
-    Now that I have demonstrated my knowledge of using unittest, I am going to write an integration test that covers all three endpoints.
-    '''
-    def integration_test(self) :
+        '''
+        Now I have demonstrated my knowledge of using unittest, I am going to write an integration test that covers all three endpoints.
+        '
+        '''
+    def test_upper(self):
         '''If we create two row in the database using the same private key it should return the same private key and public address'''
         seed1,private_key1,public_address1 = generate_address('BTC')
         seed2,private_key2,public_address2 = generate_address('BTC',private_key1)
@@ -73,6 +69,6 @@ class TestStringMethods(unittest.TestCase):
         id1 = list_all_elements[-1][0]
         id2 = list_all_elements[-2][0]
         self.assertEqual(retrieve_address(id1)[1:], retrieve_address(id2)[1:])
-
+        
 if __name__ == '__main__':
     unittest.main()

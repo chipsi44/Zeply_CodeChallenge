@@ -86,3 +86,16 @@ Note that for security purposes and to avoid polluting the database, it will be 
 It's worth mentioning that since we don't use relations inside the database, a lightweight SQLite database file would have been sufficient. However, I wanted to demonstrate my ability to create a database on a hosted service, as well as showcase my experience using more advanced databases.
 
 As a side note, I used pgAdmin to manage the PostgreSQL database. PgAdmin is a popular open-source administration and management tool for PostgreSQL, which provides a user-friendly interface for performing common database tasks.
+
+# The main.py / unnittest
+
+In the main.py file, I have written some easy unit tests to cover critical functionality. As this project has a tight deadline of three days, it may not be possible to test every aspect thoroughly. However, I have made sure to include tests that cover the most important functionalities.
+
+It is important to note that testing is a specialized field that requires expertise, and additional tests can always be added to cover areas such as error handling and memory limitations. But for the purpose of this project, I have focused on writing tests that cover the essential functionalities.
+
+To run the unit tests, simply execute the main.py file. The tests will be executed automatically, and the output will be displayed on the console. If any test fails, an error message will be displayed indicating which test has failed and what the expected output was.
+
+# Last note : 
+Please note that this project was created as part of a company challenge, and the comments present in the code were added for the benefit of the recruiter.
+
+To gain a better understanding of the functionalities implemented in this project, it is recommended that you review the source code. If you have any questions or concerns, please feel free to reach out to me for clarification.
