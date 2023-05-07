@@ -32,14 +32,15 @@ The webapp can be launched on your localhost, giving you access to three endpoin
 3. **list_address** : Display a list of all the addresses created so far, the application will display the ID, coin type, and public address for each entry in the database.
 # Some visual
 
-<div style="display: flex;" justify-content: center;>
-  <div style="flex: 1;">
+<div style="display: flex; justify-content: center;">
+  <div style="flex: 1; display: inline-block;">
     <img src="https://github.com/chipsi44/Zeply_CodeChallenge/blob/deployement_test/image/webpage.png" alt="Image webpage" style="width: 45%;">
   </div>
-  <div style="flex: 1;">
-    <img src="https://github.com/chipsi44/Zeply_CodeChallenge/blob/deployement_test/image/webpagewithretrieveid.png" alt="WebPage with id" style="width: 45%";>
+  <div style="flex: 1; display: inline-block;">
+    <img src="https://github.com/chipsi44/Zeply_CodeChallenge/blob/deployement_test/image/webpagewithretrieveid.png" alt="WebPage with id" style="width: 45%;">
   </div>
 </div>
+
 
 # The database
 
