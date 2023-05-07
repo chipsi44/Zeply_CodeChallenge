@@ -26,8 +26,12 @@ address as stored in the database.
 ```
 docker run  -p 5000:5000 my_container_name  
 ```
-
-
+The webapp can be launched on your localhost, giving you access to three endpoints. Simply access your localhost to use these endpoints:
+1. **generate_address** : Provided with a coin and an optional private key, the application will generate a public address and display it for you. It will also add the public address, the coin, and an ID to the database
+2. **retrieve_address** : By providing an ID, the application can retrieve the data of the corresponding row in the database and display it for you (id,coin,public address).
+3. **list_address** : Display a list of all the addresses created so far, the application will display the ID, coin type, and public address for each entry in the database.
+# Some visual
+| ![alt text](image1.png "Image 1") | ![alt text](image2.png "Image 2") |
 # The database
 
 The database used for this project is hosted on a free online service called render.com. It is a PostgreSQL database that contains a single table with columns for ID, coin, and public address.
@@ -38,7 +42,6 @@ It's worth mentioning that since we don't use relations inside the database, a l
 
 As a side note, I used pgAdmin to manage the PostgreSQL database. PgAdmin is a popular open-source administration and management tool for PostgreSQL, which provides a user-friendly interface for performing common database tasks.
 
-# The visual
 
 # Last note : 
 Please note that this project was created as part of a company challenge, and the comments present in the code were added for the benefit of the recruiter.
