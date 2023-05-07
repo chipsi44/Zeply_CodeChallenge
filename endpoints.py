@@ -1,4 +1,4 @@
-from db_gestion import add_to_db, select_all, select_specified_id
+from data_management.db_gestion import add_to_db, select_all, select_specified_id
 from COIN_AddGen.BTC_AddGen import bitcoin_address_generator
 from COIN_AddGen.ETH_AddGen import ETH_address_generator
 
@@ -18,10 +18,14 @@ def generate_address(coin,private_key = False) :
         'BTC' : lambda x : bitcoin_address_generator(x),
         'ETH' : lambda x : ETH_address_generator(x)
     }
-
+    
+    #Verify the coin
+    if coin not in dic_coin_function.keys() :
+        raise Exception("Sorry, coin not recognized")
     #use the function in the dictionary with the chosen coin
     seed,private_key,public_address = dic_coin_function[coin](private_key)
 
+    #
     #Just a bit of help for the dev the intersting part is the return ! 
     print(f"Private key, KEEP THIS FOR YOU : {private_key}")
     print(f"SEED, KEEP THIS FOR YOU : {seed}")
@@ -38,4 +42,3 @@ def list_address() :
 def retrieve_address(id) :
     my_address = select_specified_id("address_coin",id)
     return my_address[0]
-
